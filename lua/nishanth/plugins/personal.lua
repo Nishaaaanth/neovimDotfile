@@ -1,7 +1,7 @@
 local personal_plugs = {
-	--{
-	--	"name_of_the_plugin", dir = "~/directory/to/plugin", dev = true
-	--}
+    {
+        "stackmap.nvim", dir = "~/Programming/Nvim/stackmap.nvim"
+    }
 }
 
 return personal_plugs

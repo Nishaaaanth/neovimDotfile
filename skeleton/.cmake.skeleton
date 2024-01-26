@@ -1,0 +1,10 @@
+#! /usr/bin/zsh
+
+if [ ! -d "./build" ]; then
+	mkdir ./build
+fi
+
+name=main
+
+c++ $name.cpp -o ./build/$name
+./build/$name
