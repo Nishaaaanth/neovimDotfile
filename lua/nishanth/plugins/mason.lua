@@ -44,16 +44,16 @@ return {
                 },
             })
 
-            vim.keymap.set('n', "gd", function() vim.lsp.buf.definition() end, {});
-            vim.keymap.set('n', "K", function() vim.lsp.buf.hover() end, {});
-            vim.keymap.set('n', "<leader>wps", function() vim.lsp.buf.workplace_symbol() end, {});
-            vim.keymap.set('n', "<leader>of", function() vim.lsp.buf.open_float() end, {});
-            vim.keymap.set({ 'n', 'v' }, "<leader>ca", function() vim.lsp.buf.code_action() end, {})
-            vim.keymap.set('n', "<leader>f", function()
+            vim.keymap.set('n', "<leader>ld", function() vim.lsp.buf.definition() end, {desc = 'Code Definition'});
+            vim.keymap.set('n', "<leader>lk", function() vim.lsp.buf.hover() end, {desc = 'Code Info'});
+            vim.keymap.set('n', "<leader>lw", function() vim.lsp.buf.workplace_symbol() end, {desc = 'Code Workplace Symbol'});
+            vim.keymap.set('n', "<leader>lo", function() vim.lsp.buf.open_float() end, {desc = 'Code Open Float'});
+            vim.keymap.set({ 'n', 'v' }, "<leader>la", function() vim.lsp.buf.code_action() end, {desc = 'Code Action'})
+            vim.keymap.set('n', "<leader>lf", function()
                 vim.lsp.buf.format { async = true }
-            end, {})
-            vim.keymap.set('n', "[d", function() vim.diagnostic.goto_next() end, {})
-            vim.keymap.set('n', "]d", function() vim.diagnostic.goto_prev() end, {})
+            end, {desc = 'Code Format'})
+            vim.keymap.set('n', "[d", function() vim.diagnostic.goto_next() end, {desc = 'Next Diagnostic'})
+            vim.keymap.set('n', "]d", function() vim.diagnostic.goto_prev() end, {desc = 'Previous Diagnostic'})
 
 
             local cmp = require("cmp")
